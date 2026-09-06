@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mia-frontend
+  labels:
+    app: mia-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mia-frontend
+  template:
+    metadata:
+      labels:
+        app: mia-frontend
+    spec:
+      containers:
+        - name: mia-nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80

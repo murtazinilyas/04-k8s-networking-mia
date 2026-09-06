@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mia-backend
+  labels:
+    app: mia-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mia-backend
+  template:
+    metadata:
+      labels:
+        app: mia-backend
+    spec:
+      containers:
+        - name: mia-multitool
+          image: wbitt/network-multitool
+          env:
+            - name: HTTP_PORT
+              value: "80"
+          ports:
+            - containerPort: 80

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mia-deployment
+  labels:
+    app: mia-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mia-deployment
+  template:
+    metadata:
+      labels:
+        app: mia-deployment
+    spec:
+      containers:
+        - name: mia-nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+        - name: mia-multitool
+          image: wbitt/network-multitool
+          env:
+            - name: HTTP_PORT
+              value: "8080"
+          ports:
+            - containerPort: 8080
