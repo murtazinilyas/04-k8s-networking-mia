@@ -1,15 +1,15 @@
-  apiVersion: networking.k8s.io/v1
-  kind: Ingress
-  metadata:
-    name: mia-ingress
-  spec:
-    rules:
-    - http:
-        paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: mia-frontend-svc
-              port:
-                number: 80
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mia-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: mia-frontend-svc
+            port:
+              number: 80
