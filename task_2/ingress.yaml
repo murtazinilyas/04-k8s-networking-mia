@@ -2,8 +2,6 @@
   kind: Ingress
   metadata:
     name: mia-ingress
-    annotations:
-      traefik.ingress.kubernetes.io/rewrite-target: /
   spec:
     rules:
     - http:
