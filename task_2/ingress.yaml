@@ -13,10 +13,3 @@
               name: mia-frontend-svc
               port:
                 number: 80
-        - path: /api
-          pathType: Prefix
-          backend:
-            service:
-              name: mia-backend-svc
-              port:
-                number: 80
